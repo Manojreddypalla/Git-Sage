@@ -1,8 +1,8 @@
 # ============================================
-# RepoMind Streamlit Project .gitignore
+# RepoMind Project .gitignore
 # ============================================
 
-# --- Python ---
+# --- Python bytecode / cache ---
 __pycache__/
 *.pyc
 *.pyo
@@ -14,54 +14,77 @@ __pycache__/
 *.swp
 *.swo
 *.DS_Store
-*.egg-info/
-.env
-.venv
+
+# --- Virtual Environments ---
+.venv/
 venv/
 env/
 ENV/
 .Python
+*.env
+*.venv
 
-# --- Streamlit ---
+# --- Streamlit configuration ---
 .streamlit/secrets.toml
 .streamlit/config.toml
 
-# --- Virtual Environment / IDE ---
+# --- IDE / Editor files ---
 .idea/
 .vscode/
 *.code-workspace
 
-# --- Local Workspace (repositories & indexes) ---
-repo_workspace/
-!repo_workspace/.gitkeep   # Keep the folder but ignore contents
+# --- OS junk files ---
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
 
-# --- FAISS and Embedding Files ---
+# --- Repos and generated data ---
+repo_workspace/
+!repo_workspace/.gitkeep   # keep the folder, ignore its content
+
+# --- FAISS indexes, embeddings & metadata ---
 *.index
 *.npy
 *.npz
 *.jsonl
+*_embs.npy
+*_meta.json
+*_index_meta.json
 
-# --- Logs / Reports ---
+# --- Logs and temp files ---
 logs/
 *.log
 nohup.out
+tmp/
+temp/
+__temp__/
+scratch/
+output/
+*.bak
+*.old
+*.orig
 
-# --- Cache ---
+# --- Cache / compiled assets ---
 .cache/
 __cache__/
 *.cache
 *.pickle
 *.pkl
 
-# --- OS / Misc ---
-Thumbs.db
-ehthumbs.db
-desktop.ini
-.DS_Store
+# --- Database files ---
+*.db
+*.sqlite3
+*.sql
+*.mysql
 
-# --- Jupyter / Notebooks ---
-.ipynb_checkpoints/
-*.ipynb
+# --- Node / Frontend (if added later) ---
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
 
 # --- Build / Distribution ---
 build/
@@ -70,41 +93,27 @@ dist/
 *.egg-info/
 MANIFEST
 
-# --- Temporary Data / Artifacts ---
-tmp/
-temp/
-test_output/
-debug/
-scratch/
+# --- Dataset & downloads ---
 data/
 datasets/
 downloads/
+test_output/
 
-# --- Custom RepoMind Exclusions ---
-# Ignore cloned GitHub repositories & indexes
-repo_workspace/repos/
-repo_workspace/indexes/
-repo_workspace/tmp/
-repo_workspace/__temp__/
-
-# --- Node / Frontend (if used later) ---
-node_modules/
-npm-debug.log
-yarn-debug.log
-yarn-error.log
-package-lock.json
-yarn.lock
-
-# --- Credentials ---
-*.env
-*.env.*
+# --- Credentials / Tokens ---
+.env
+.env.*
 .env.local
 config.json
 secret.json
 openai_api_key.txt
 huggingface_token.txt
 
-# --- Backup Files ---
-*.bak
-*.old
-*.orig
+# --- Reports / generated docs ---
+reports/
+*.pptx
+*.pdf
+*.docx
+
+# --- Temporary Notebooks ---
+.ipynb_checkpoints/
+*.ipynb

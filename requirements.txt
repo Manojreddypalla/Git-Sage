@@ -1,5 +1,50 @@
-streamlit
-gitpython
-sentence-transformers
-faiss-cpu
-numpy
+# ==============================
+# RepoMind Project Dependencies
+# ==============================
+
+# --- Core ---
+streamlit                         # Web interface
+gitpython                         # Clone and manage GitHub repos locally
+PyGithub                          # Optional: Access GitHub API for repo data
+
+# --- AI / NLP / Embeddings ---
+sentence-transformers              # Generate text/code embeddings (MiniLM, etc.)
+transformers                       # For Hugging Face model APIs or pipelines
+faiss-cpu                          # Local semantic search using FAISS
+numpy                              # Numeric operations (vectors, arrays)
+scipy                              # For cosine similarity & extra math tools
+torch                              # Required backend for sentence-transformers
+
+# --- Visualization / Mind Maps ---
+graphviz                           # Generate mind maps / repo structure graphs
+pyvis                              # Interactive network visualization in Streamlit
+networkx                           # Dependency graph and relationships
+
+# --- Data Handling ---
+pandas                             # Structured data / logs / summaries
+json5                              # Safer JSON parsing
+python-dotenv                      # Manage API keys via .env
+
+# --- Optional (LLM Integrations) ---
+openai                             # If you use OpenAI for repo explanation
+huggingface-hub                    # For Hugging Face Inference API
+requests                           # API calls (GitHub, Hugging Face, OpenAI)
+tiktoken                           # Token counting for LLM context management
+
+# --- Databases (for repo metadata / memory persistence) ---
+mysql-connector-python             # If using MySQL for metadata
+SQLAlchemy                         # ORM layer for managing DB schema
+
+# --- Background / Workflow Automation ---
+schedule                           # For periodic repo updates
+celery                             # Optional: Background task runner (future scaling)
+redis                              # Cache layer for chat memory or background tasks
+
+# --- Security / Misc ---
+pyyaml                             # Configs
+rich                               # Pretty terminal logs & debugging output
+loguru                             # Better structured logging
+
+# --- Development ---
+black                              # Code formatting
+flake8                             # Linting
