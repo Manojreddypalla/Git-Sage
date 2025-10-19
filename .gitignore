@@ -16,13 +16,17 @@ __pycache__/
 *.DS_Store
 
 # --- Virtual Environments ---
+# Common names
 .venv/
 venv/
 env/
-ENV/
-.Python
-*.env
-*.venv
+
+# Your specific virtual environment
+hub/
+
+# --- Environment variables ---
+# Ignore files that store secrets and keys
+.env
 
 # --- Streamlit configuration ---
 .streamlit/secrets.toml
